@@ -30,7 +30,6 @@ namespace ConsoleApp17
                 json.Serialize(writer, values);
             }
         }
-
         public void Load(string filename)
         {
             FileInfo Info = new FileInfo(filename);
@@ -85,17 +84,16 @@ namespace ConsoleApp17
         {
             Config config = Config.GetInstance();
             config.Load("ELvin.json");
+            config.Write("back", "white");
             config.ShowData();
             try
             {
-                Console.WriteLine(config.Read("color"));
+                Console.WriteLine(config.Read("back"));
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-
-
         }
     }
 }
